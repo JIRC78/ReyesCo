@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    }
+    .contenedor {
+        display: flex;
+        background-color: greenyellow;
+        width:100vw;
+        height:100vh;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items:center  
+    }
+    .caja {
+
+        background-color: blueviolet;                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+        border:2px solid black;
+        height:100px;
+        margin:2px;
+        width: 100px;
+        font-size: larger;
+        font-weight:500;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* width:calc(())*/
+        text-align:center;
+        ;
+    }
+
+   /* #caja1 {
+        align-self: flex-start;
+    }
+    
+    #caja6 {
+        align-self: flex-end;
+    }*/
+
+    #caja1 {flex-grow: 1;}
+    #caja2 {flex-grow: 2;}
+    #caja3 {flex-grow: 3;}
+    #caja4 {flex-grow: 4;}
+    #caja5 {flex-grow: 5;}
+
+    

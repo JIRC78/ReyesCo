@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;  
+    background: rgb(242, 255, 58);
 }
 
 ul {
@@ -26,12 +27,14 @@ ul > li:target > ul {
     float: left;
     margin: auto;
     width: 200px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background: blueviolet;
     color: antiquewhite;
 }
 
-a { color: white;
+a { color: rgb(8, 8, 8);
     text-decoration: none;
+    font-size: 20px;
 }
 
 .subOpcion {
@@ -39,7 +42,10 @@ a { color: white;
     padding-left: 20px;
     background: gray;
     color: aquamarine;
+    font-family: cursive;
+    font-size: 100%;
 }
+
 
 
 
