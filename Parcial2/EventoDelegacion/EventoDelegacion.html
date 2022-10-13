@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="EventoDelegacion.css">
+
+</head>
+<body>
+    <div id="idcont" class="contenedor">
+        <div id="caja1" class="caja">no me jala</div>
+        <div id="caja2" class="caja">caja2</div>
+        <div id="caja3" class="caja">caja3</div>
+        <div id="caja4" class="caja">caja4</div>
+        <div id="caja5" class="caja">caja5</div>
+        <div id="caja6" class="caja">caja6</div>
+        
+    </div>
+        <script type="text/javascript">
+
+            var elem = document.getElementById("idcont");
+            elem.addEventListener("click",cambiarCaja);
+            function cambiarCaja(evento) {
+                console.log(evento);
+                if (document.getElementById(evento.target.id).classList.contains("caja")) {
+                    document.getElementById(evento.target.id).classList.toggle("cajaAzul")
+                }
+            }
+        </script>
+        
+</body>
+</html>

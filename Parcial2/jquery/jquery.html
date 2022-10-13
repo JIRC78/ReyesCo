@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaQueries</title>
+    <link rel="stylesheet" href="jquery.css">
+    <script src="jquery-3.6.1.min.js"></script>
+
+</head>
+<body>
+    
+    <button id="caja1" onclick="alert('Click en Boton 1')">caja1</div>
+    <button id="caja2" >caja2</div>
+    <button id="caja3" >caja3</div>
+
+        <script type="text/javascript">
+            window.onload = function(){
+
+               /* document.getElementById("caja2").onclick = function() {alert("click en Boton 2");}
+            document.querySelector("#caja3").addEventListener("click",mifuncion2);
+            
+            function mifuncion2() {
+                alert("click en boton 3");
+            }*/
+
+
+            }
+            $(document).ready(function(){
+
+                $('#caja1').click(function(){
+                    alert('se escucho el click con la libreria JQuery')
+                });
+
+
+            })
+
+            $(document).ready(function(){
+
+                $('#caja2').click(function(){
+                    alert('se escucho el click con la libreria JQuery')
+                });
+
+
+            })
+
+            $(document).ready(function(){
+
+              $('#caja3').click(function(){
+                  alert('se escucho el click con la libreria JQuery')
+               });
+
+
+            })
+
+            
+        </script>
