@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.nose1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    background-image: linear-gradient(rgb(56, 114, 161), rgb(80, 80, 80));
+    border:2px solid black;
+    text-align: center;
+    height: auto;
+    margin: 10px;
+    padding: 40px;
+    width: 750px;
+    
+    
+
+}
+
+
+
+.col1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    background-image: linear-gradient(rgb(56, 114, 161), rgb(80, 80, 80));
+    border:1px solid rgb(8, 2, 0);
+    text-align: center;
+    height: 50px;
+    }
+
+#siderbar{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background-color: rgb(25, 25, 87);
+    left: -250px;
+    transition: all 500ms linear;
+}
+
+#cont{
+height: 100%;
+width: calc(100% - 250px);
+float: right;
+}
+
+#siderbar.active{
+    left: 0;
+}
+
+
+#siderbar ul li{
+    color: rgba(230, 230, 230, .9);
+    text-align: center;
+    border-bottom: 2px solid rgba(230, 230, 230, 0.5);
+    padding: 15px 10px;
+    list-style: none;
+
+}
+
+.logo{
+    border-radius: 20%;
+    display: block;
+    margin: 0 auto;
+}
+
+#siderbar .toggle-btn{
+    position: absolute;
+    left: 290px;
+    top: 20px;
+    cursor: pointer;
+    
+}
+
+#siderbar .toggle-btn span{
+    display: block;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 20%;
+    background-color: rgb(231, 231, 231);
+}
+
+
+
+
+
+/*-------------------------------------------MODAL-------------------------------------------*/
+.botonAbrir {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.ventanaModal {
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /*background: greenyellow;*/
+    z-index: 99999;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.ventanaModal:target {
+    opacity: 1;
+    pointer-events: auto;
+    background: none;
+}
+
+.ventanaModal > div {
+    width: 600px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px;
+    border-radius: 10px;
+    border-color: black;
+    border-style: groove;
+    background: rgb(191, 245, 166);
+}
+
+.botonAbrir:hover{ background: rgb(255, 255, 255); color: rgb(0, 0, 0);}
+.botonCerrar:hover{ background: rgb(255, 255, 255); color: rgb(0, 0, 0);}
