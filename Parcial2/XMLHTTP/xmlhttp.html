@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="xmlhttp.js"></script>
+    <link rel="stylesheet" href="xmlhttp.css"> 
+</head>
+<body>
+    <div id="headerdiv">Header jiji</div>
+
+    <button id="btnajax" type="button">Cambiar</button>
+    <button id="btnreset" type="button">Regresar</button>
+
+
+
+    <div id="idjosue" class="contenedor">
+        <div id="caja1" class="caja" style="color: white;">color negro</div>
+        <div id="caja2" class="caja2" style="color: white;">color verde</div>
+        <div id="caja3" class="caja3" style="color: white;">color rosa</div>
+        <div id="caja4" class="caja4" style="color: white;">color azul</div>
+        <div id="caja5" class="caja5" style="color: white;">color naranja</div>
+        <div id="caja6" class="caja6" style="color: white;">color morado</div>
+        
+    </div>
+
+        <script type="text/javascript">
+
+            var elem = document.getElementById("idjosue");
+            elem.addEventListener("click",cambiarCaja);
+            function cambiarCaja(evento) {
+                console.log(evento);
+                if (document.getElementById(evento.target.id).classList.contains("caja")) {
+                    document.getElementById(evento.target.id).classList.toggle("cambiarcolor")
+                }
+                if (document.getElementById(evento.target.id).classList.contains("caja2")) {
+                    document.getElementById(evento.target.id).classList.toggle("cambiarcolor2")
+                }
+                if (document.getElementById(evento.target.id).classList.contains("caja3")) {
+                    document.getElementById(evento.target.id).classList.toggle("cambiarcolor3")
+                }
+                if (document.getElementById(evento.target.id).classList.contains("caja4")) {
+                    document.getElementById(evento.target.id).classList.toggle("cambiarcolor4")
+                }
+                if (document.getElementById(evento.target.id).classList.contains("caja5")) {
+                    document.getElementById(evento.target.id).classList.toggle("cambiarcolor5")
+                }
+                if (document.getElementById(evento.target.id).classList.contains("caja6")) {
+                    document.getElementById(evento.target.id).classList.toggle("cambiarcolor6")
+                }
+            }
+        </script>
+    
+</body>
+</html>
