@@ -3,6 +3,7 @@ window.onload = function () {
     document.getElementById("btnreset").addEventListener("click", iniciarHeader);
     
     function pedirHeader() {
+
         var solicitud = new XMLHttpRequest();
 
         solicitud.onreadystatechange = function () {
@@ -11,13 +12,13 @@ window.onload = function () {
                 
             }};
 
-            solicitud.open("GET", "archivojs.txt", true);
+            solicitud.open("GET", "archivo.txt", true);
             solicitud.send();
         
     }
 
     function iniciarHeader() {
-        document.getElementById("headerdiv").innerHTML = <h2> este es un header</h2>;
+        document.getElementById("headerdiv").innerHTML = "<h2> este es un header</h2>";
         
     }
 
