@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Pokemon</h1>
+    <button id="btnPeticion" type="button"> Peticion </button>
+    <pre id="apiData"></pre>
+    <p id="exp"></p>
+    <p id="nombre"></p>
+
+    <img width="150" height="150"/>
+
+
+    <!--<div id="broma"></div>-->
+
+
+    <!--<script>
+        document.getElementById("btnPeticion").addEventListener("click", function (params) {
+           
+            fetch("api url")
+
+            /*.then(function (respuesta) { console.log(respuesta)})*/
+            .then(respuesta => respuesta.json())
+            .then(datoJson => document.getElementById("broma").innerText = datoJson.value);
+            
+        });
+
+
+    </script>-->
+
+    <script src="fetch.js"></script>
+    
+</body>
+</html>
