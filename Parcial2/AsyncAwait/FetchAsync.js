@@ -13,14 +13,9 @@ function random(){
 var rand = random();
 
 
-
-   
-
-
-const llamarApi = () => {
-
-     fetch('https://pokeapi.co/api/v2/pokemon/'+random())
-     .then(res => res.json())
+async function llamarApi() {
+   let res = await fetch('https://pokeapi.co/api/v2/pokemon/'+random())
+   .then(res => res.json())
      .then(data => {
 
       console.log(data);
@@ -36,7 +31,10 @@ const llamarApi = () => {
 
      }) 
      .catch(e => console.error(new Error(e)));
+   
 }
+
+
 
 const llamarshiny = () => {
 
