@@ -55,8 +55,8 @@
       <input type="Editorial" class="form-control" id="idEditorial">
     </div>
     <div class="form-group col-sm-12 col-md-12 col-lg-6">
-      <label for="idFecha" class="form-label">Fecha de publicacion:</label>
-      <input type="idFecha" class="form-control" id="idFecha" >
+      <label for="idaño" class="form-label">Año de publicacion:</label>
+      <input type="idaño" class="form-control" id="idaño" >
     </div>
 
              
@@ -182,7 +182,7 @@ document.getElementById("btnGet").addEventListener("click", async function(){
            document.getElementById("idAutor").value = datoJson.autor;
            document.getElementById("idIdioma").value = datoJson.idioma;
            document.getElementById("idEditorial").value = datoJson.editorial;
-           document.getElementById("idFecha").value = datoJson.fecha;
+           document.getElementById("idAño").value = datoJson.año;
 
 
            console.log(datoJson);

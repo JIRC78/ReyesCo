@@ -1,14 +1,14 @@
 <?php
 
-$servidor = "localhost"
-$basedatos = "ejemplo";
+$servidor = "localhost";
+$basedatos = "baseweb";
 $usuario = "root";
 $password = "";
 
-$con  = mysqli_connect($servidor, $basedatos, $usuario, $password) or die("no se pudo conectar a localhost");
-$consulta = "select * form empleado";
+$con  = mysqli_connect($servidor, $usuario, $password, $basedatos) or die("no se pudo conectar a localhost");
+$consulta = "select * from libros";
 
-$registros = mysqli_quey($con, $consulta) or die ("problemas con el select");
+$registros = mysqli_query($con, $consulta) or die ("problemas con el select");
 
 // while ($reg = mysqli_fetch_array($registros, MYSQLI_ASSOC)) {
 //     # code...
