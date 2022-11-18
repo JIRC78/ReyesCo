@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootcss.css">
+    <link rel="stylesheet" href="./bootcss.css">
 </head>
 <body>
     <h1>Registro de Libros <img src="./libro.png" width="150" height="150" alt="/****\"></h1>
@@ -14,34 +14,36 @@
 
         <div class="row"> 
           <div class="form-group col-sm-12 col-md-12 col-lg-4">
+            <label for="idLibro" class="form-label">id:</label>
+            <input type="idLibro" class="form-control" id="idLibro" >
+          </div>
+          <div class="form-group col-sm-12 col-md-12 col-lg-4">
             <label for="idNombre" class="form-label">Titulo del Libro:</label>
-            <input type="nombre" class="form-control" id="idNombre" >
+            <input type="idNombre" class="form-control" id="idNombre" >
           </div>
         <div class="form-group col-sm-12 col-md-12 col-lg-4">
           <label for="idGenero" class="form-label">Genero:</label>
-          <input type="diGenero" class="form-control" id="idGenero">
+          <input type="idGenero" class="form-control" id="idGenero">
         </div>
-        <div class="form-group col-sm-12 col-md-12 col-lg-4">
-          <label for="idsubGenero" class="form-label">SubGenero:</label>
-          <input type="subGenero" class="form-control" id="idsubGenero" >
-        </div>
+        
     </div>
 
     
     <div class="row"> 
+      <div class="form-group col-sm-12 col-md-12 col-lg-4">
+        <label for="idsubGenero" class="form-label">SubGenero:</label>
+        <input type="idsubGenero" class="form-control" id="idsubGenero" >
+      </div>
   <div class="form-group col-sm-12 col-md-4 col-lg-4">
     <label for="idAutor" class="form-label">Autor:</label>
-    <input type="Autor" class="form-control" id="idAutor">
+    <input type="idAutor" class="form-control" id="idAutor">
   </div>
 
   <div class="form-group col-sm-12 col-md-4 col-lg-4">
     <label for="idIdioma" class="form-label">idioma:</label>
-    <input type="Idioma" class="form-control" id="idIdioma">
+    <input type="idIdioma" class="form-control" id="idIdioma">
   </div>
-  <div class="form-group col-sm-12 col-md-12 col-lg-4">
-    <label for="idFecha" class="form-label">Fecha de publicacion:</label>
-    <input type="Fecha" class="form-control" id="idFecha" >
-  </div>
+  
 </div>
 
     
@@ -52,17 +54,35 @@
       <label for="idEditorial" class="form-label">Editorial</label>
       <input type="Editorial" class="form-control" id="idEditorial">
     </div>
+    <div class="form-group col-sm-12 col-md-12 col-lg-6">
+      <label for="idFecha" class="form-label">Fecha de publicacion:</label>
+      <input type="idFecha" class="form-control" id="idFecha" >
+    </div>
 
-             <div class="form-group col-sm-12 col-md-2 col-lg-6">
-              <label for="idFormato" class="form-label">Formato:</label>
-              <input type="Formato" class="form-control" id="idFormato">
+             
+            </div>
+
+
+            <!-- BOTONES -->
+            <div class="row">
+              
+              <div class="form-group col-sm-6 col-md-4 col-lg-1">
+                <button type="button" class="btn btn-primary" id="btnRegistrar">Registrar</button>
+             </div>
+              
+             <div class="form-group col-sm-6 col-md-4 col-lg-1">
+             <button type="button" class="btn btn-primary" id="liveToastBtn">toast</button>
+            </div>
+            <!-- Button trigger modal -->
+            <div class="form-group col-sm-6 col-md-4 col-lg-1">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Boton modal</button>
+            </div>
+
+            <div class="form-group col-sm-6 col-md-4 col-lg-1">
+            <button type="button" class="btn btn-primary" id="btnGet">Traer Registro</button>
+            </div>
           </div>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Registrar</button>
-            <div>
-              <button type="button" class="btn btn-primary" id="liveToastBtn">toast</button>
-            </div>
+ 
 
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
   <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -78,8 +98,7 @@
   </div>
 </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Boton modal</button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -134,9 +153,45 @@
     myModalAlternative.show();
     
     })
+
     
     </script>
+  <script>
+   
+  //document.getElementById("btnGet").addEventListener("click", function () {
+  //fetch('GetRegistro.php')
+  //.then(respuesta => respuesta.json())
+  //.then(dato => refrescar(dato));
+
+  //function refrescar(reg) {
+    //document.getElementById("idLibro").value=reg.id;
+    //document.getElementById("idNombre").value=reg.nombrenuevo;
+    
+    //console.log();
+  //}
   
+//});
+ 
+document.getElementById("btnGet").addEventListener("click", async function(){
+    let response = await fetch("GetRegistro.php")
+           let datoJson = await response.json();
+           document.getElementById("idLibro").value = datoJson.id;
+           document.getElementById("idNombre").value = datoJson.nombre;
+           document.getElementById("idGenero").value = datoJson.genero;
+           document.getElementById("idsubGenero").value = datoJson.subgenero;
+           document.getElementById("idAutor").value = datoJson.autor;
+           document.getElementById("idIdioma").value = datoJson.idioma;
+           document.getElementById("idEditorial").value = datoJson.editorial;
+           document.getElementById("idFecha").value = datoJson.fecha;
+
+
+           console.log(datoJson);
+  })
+
+
+
+
+  </script>
 
     
 </body>
