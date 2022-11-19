@@ -10,20 +10,20 @@
 </head>
 <body>
     <h1>Registro de Libros <img src="./libro.png" width="150" height="150" alt="/****\"></h1>
-    <form>
+    <form id="formulario" method="POST">
 
         <div class="row"> 
           <div class="form-group col-sm-12 col-md-12 col-lg-4">
             <label for="idLibro" class="form-label">id:</label>
-            <input type="idLibro" class="form-control" id="idLibro" >
+            <input type="number" class="form-control" name="idLibro" id="idLibro" >
           </div>
           <div class="form-group col-sm-12 col-md-12 col-lg-4">
             <label for="idNombre" class="form-label">Titulo del Libro:</label>
-            <input type="idNombre" class="form-control" id="idNombre" >
+            <input type="text" class="form-control" name="idNombre" id="idNombre" >
           </div>
         <div class="form-group col-sm-12 col-md-12 col-lg-4">
           <label for="idGenero" class="form-label">Genero:</label>
-          <input type="idGenero" class="form-control" id="idGenero">
+          <input type="text" class="form-control" name="idGenero" id="idGenero">
         </div>
         
     </div>
@@ -32,16 +32,16 @@
     <div class="row"> 
       <div class="form-group col-sm-12 col-md-12 col-lg-4">
         <label for="idsubGenero" class="form-label">SubGenero:</label>
-        <input type="idsubGenero" class="form-control" id="idsubGenero" >
+        <input type="text" class="form-control" name="idsubGenero" id="idsubGenero" >
       </div>
   <div class="form-group col-sm-12 col-md-4 col-lg-4">
     <label for="idAutor" class="form-label">Autor:</label>
-    <input type="idAutor" class="form-control" id="idAutor">
+    <input type="text" class="form-control" name="idAutor" id="idAutor">
   </div>
 
   <div class="form-group col-sm-12 col-md-4 col-lg-4">
     <label for="idIdioma" class="form-label">idioma:</label>
-    <input type="idIdioma" class="form-control" id="idIdioma">
+    <input type="text" class="form-control" name="idIdioma" id="idIdioma">
   </div>
   
 </div>
@@ -52,11 +52,11 @@
 
     <div class="form-group  col-sm-12 col-md-5 col-lg-6">
       <label for="idEditorial" class="form-label">Editorial</label>
-      <input type="Editorial" class="form-control" id="idEditorial">
+      <input type="text" class="form-control" name="idEditorial" id="idEditorial">
     </div>
     <div class="form-group col-sm-12 col-md-12 col-lg-6">
-      <label for="idaño" class="form-label">Año de publicacion:</label>
-      <input type="idaño" class="form-control" id="idaño" >
+      <label for="idAño" class="form-label">Año de publicacion:</label>
+      <input type="text" class="form-control" name="idAño" id="idAño" >
     </div>
 
              
@@ -157,6 +157,29 @@
     
     </script>
   <script>
+    // document.getElementById("btnGet").addEventListener("click", async () => {
+    //   var datosFormulario = new FormData(document.getElementById("formulario"));
+    //   let respuesta = await fetch('GetRegistro.php', {
+    //     method: 'POST', 
+    //     body:  datosFormulario
+    //   })
+
+    //   let dato = await respuesta.json();
+
+    //   document.getElementById("idLibro").value = datojson.idLibro;
+    //   document.getElementById("idNombre").value = datojson.nombre;
+    //   document.getElementById("idGenero").value = datojson.genero;
+    //   document.getElementById("idsubGenero").value = datojson.subgenero;
+    //   document.getElementById("idAutor").value = datojson.autor;
+    //   document.getElementById("idIdioma").value = datojson.idioma;
+    //   document.getElementById("idEditorial").value = datojson.editorial;
+    //   document.getElementById("idAño").value = datojson.año;
+
+      
+    // });
+
+
+
    
   //document.getElementById("btnGet").addEventListener("click", function () {
   //fetch('GetRegistro.php')
@@ -172,21 +195,29 @@
   
 //});
  
-document.getElementById("btnGet").addEventListener("click", async function(){
-    let response = await fetch("GetRegistro.php")
-           let datoJson = await response.json();
-           document.getElementById("idLibro").value = datoJson.id;
-           document.getElementById("idNombre").value = datoJson.nombre;
-           document.getElementById("idGenero").value = datoJson.genero;
-           document.getElementById("idsubGenero").value = datoJson.subgenero;
-           document.getElementById("idAutor").value = datoJson.autor;
-           document.getElementById("idIdioma").value = datoJson.idioma;
-           document.getElementById("idEditorial").value = datoJson.editorial;
-           document.getElementById("idAño").value = datoJson.año;
+ document.getElementById("btnGet").addEventListener("click", async function(){
+    
+  var datosFormulario = new FormData(document.getElementById("formulario"));
+  
+ let respuesta = await fetch("GetRegistro.php", {
+   method: 'POST', 
+    body: datosFormulario
+ })
+        let datojson = await respuesta.json();
+
+         document.getElementById("idLibro").value = datojson.idLibro;
+           document.getElementById("idNombre").value = datojson.nombre;
+           document.getElementById("idGenero").value = datojson.genero;
+           document.getElementById("idsubGenero").value = datojson.subgenero;
+            document.getElementById("idAutor").value = datojson.autor;
+           document.getElementById("idIdioma").value = datojson.idioma;
+           document.getElementById("idEditorial").value = datojson.editorial;
+           document.getElementById("idAño").value = datojson.año;
+           
 
 
-           console.log(datoJson);
-  })
+           console.log(datojson);
+   });
 
 
 

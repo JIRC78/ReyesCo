@@ -1,5 +1,5 @@
 <?php
-$registro["id"]="13";
+$registro["idLibro"]="13";
 $registro["nombre"]="el principito";
 $registro["genero"]="Terror";
 $registro["subgenero"]="comedia, drama, accion";
