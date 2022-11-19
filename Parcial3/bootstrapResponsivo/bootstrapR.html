@@ -199,20 +199,20 @@
     
    var datosFormulario = new FormData(document.getElementById("formulario"));
   
-  let respuesta = await fetch("consultaDB.php", {
+  let respuesta = await fetch("GetRegistro.php", {
     method: 'POST', 
      body: datosFormulario
   })
          let datojson = await respuesta.json();
 
           document.getElementById("idLibro").value = datojson.idLibro;
-           document.getElementById("idNombre").value = datojson.Nombre;
-            document.getElementById("idGenero").value = datojson.Genero;
-            document.getElementById("idsubGenero").value = datojson.SubGenero;
-            document.getElementById("idAutor").value = datojson.Autor;
-            document.getElementById("idIdioma").value = datojson.Idioma;
-            document.getElementById("idEditorial").value = datojson.Editorial;
-            document.getElementById("idAño").value = datojson.Año;
+           document.getElementById("idNombre").value = datojson.nombre;
+            document.getElementById("idGenero").value = datojson.genero;
+            document.getElementById("idsubGenero").value = datojson.subgenero;
+            document.getElementById("idAutor").value = datojson.autor;
+            document.getElementById("idIdioma").value = datojson.idioma;
+            document.getElementById("idEditorial").value = datojson.editorial;
+            document.getElementById("idAño").value = datojson.año;
            
 
 
