@@ -1,0 +1,1 @@
+document.getElementById("btnPeticion"),document.getElementById("btnshiny"),document.getElementById("apiData"),document.getElementById("exp"),document.getElementById("nombre"),document.getElementById("id"),document.querySelector("img"),Math.floor(199*Math.random()+1);
