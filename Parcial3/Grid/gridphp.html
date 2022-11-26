@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid-theme.min.css" />
+
+    <script src="./jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"></script>
+</head>
+<body>
+
+    <form id="formulario">
+        <div id="jsGrid"></div>
+    </form>
+
+    
+
+    <script>
+        var libros = [];
+
+        consulta();
+        async function consulta () {
+            let respuesta = await fetch("gridphp.php")
+            let datojson = await respuesta.json();
+            
+            libros=datojson;
+
+            console.log(datojson);
+
+            $("#jsGrid").jsGrid({
+                
+    width: "100%",
+    height: "400px",
+
+    inserting: true,
+    editing: true,
+    sorting: true,
+    paging: true,
+
+    data: libros,
+
+    fields: [
+        
+        // { name: "Name", type: "text", width: 150, validate: "required" },
+        // { name: "Age", type: "number", width: 50 },
+        // { name: "Address", type: "text", width: 200 },
+        // { name: "Country", type: "select", items: countries, valueField: "Id", textField: "Name" },
+        // { name: "Married", type: "checkbox", title: "Is Married", sorting: false },
+        {name: "idLibro", type: "number", width: 70},
+        {name: "Nombre", type: "text", width: 150},
+        {name: "Genero", type: "text", width: 150},
+        {name: "SubGenero", type: "text", width: 150},
+        {name: "Autor", type: "text", width: 150},
+        {name: "Idioma", type: "text", width: 150},
+        {name: "Editorial", type: "text", width: 150},
+        {name: "Año", type: "number", width: 50},
+        { type: "control" }
+         
+        
+       
+        
+    ]
+});
+        }
+        
+
+// var datosFormulario = new FormData(document.getElementById("formulario"));
+// let respuesta = await fetch("gridphp.php")
+// let datojson = await respuesta.json();
+
+
+
+    </script>
+
+</body>
+</html>

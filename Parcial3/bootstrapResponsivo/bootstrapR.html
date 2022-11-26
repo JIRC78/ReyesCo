@@ -197,12 +197,9 @@
  
   document.getElementById("btnGet").addEventListener("click", async function(){
     
-   var datosFormulario = new FormData(document.getElementById("formulario"));
+   
   
-  let respuesta = await fetch("GetRegistro.php", {
-    method: 'POST', 
-     body: datosFormulario
-  })
+  let respuesta = await fetch("GetRegistro.php")
          let datojson = await respuesta.json();
 
           document.getElementById("idLibro").value = datojson.idLibro;
