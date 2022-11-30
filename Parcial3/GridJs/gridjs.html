@@ -15,15 +15,24 @@
     <div id="wrapper"></div>
 
     <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
-    <script src="src/index.js"></script>
+        
 
     <script>
-        async function TraerDatos() {
-            let headerList = { "Accept": "*/*", }
-            let response = await fetch{}
-            
-        }
 
+        (async ()=>{
+            let headerList = { "Accept": "*/*", }
+            let response = await fetch("http://localhost/ReyesCO/Parcial3/GridJs/gridjs.php",{
+                method: "GET",
+                headers: headerList
+            });
+            let datos = await response.json();
+
+            new gridjs.Grid({
+                columns: ["idLibro","Nombre","Genero","SubGenero","Autor","Idioma","Editorial","Año"],
+                data: datos
+
+            }).render(document.getElementById("wrapper"));
+        })();
 
 
     </script>

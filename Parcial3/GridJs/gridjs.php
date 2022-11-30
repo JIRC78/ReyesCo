@@ -21,7 +21,7 @@ $registros = mysqli_query($con, $consulta) or die ("problemas con el select");
 //     printf($reg[1].' '.$reg[2].'<br>');
 // }
 
-$result = mysqli_fetch_all($registros,MYSQLI_ASSOC);
+$result = mysqli_fetch_all($registros);
 
 mysqli_close($con);
 echo json_encode($result);
