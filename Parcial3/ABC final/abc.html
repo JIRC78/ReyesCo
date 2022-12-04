@@ -13,15 +13,12 @@
     <form id="formulario">
 
         <div class="row"> 
-          <div class="form-group col-sm-12 col-md-12 col-lg-4">
-            <label for="idLibro" class="form-label">id:</label>
-            <input type="number" class="form-control" name="idLibro" id="idLibro" >
-          </div>
-          <div class="form-group col-sm-12 col-md-12 col-lg-4">
+         
+          <div class="form-group col-sm-12 col-md-12 col-lg-6">
             <label for="idNombre" class="form-label">Titulo del Libro:</label>
-            <input type="text" class="form-control" name="idNombre" id="idNombre" >
+            <input type="text" class="form-control"  id="idNombre" >
           </div>
-        <div class="form-group col-sm-12 col-md-12 col-lg-4">
+        <div class="form-group col-sm-12 col-md-12 col-lg-6">
           <label for="idGenero" class="form-label">Genero:</label>
           <input type="text" class="form-control" name="idGenero" id="idGenero">
         </div>
@@ -66,8 +63,8 @@
             <!-- BOTONES -->
             <div class="row">
               
-              <div class="form-group col-sm-6 col-md-4 col-lg-1">
-                <button type="button" class="btn btn-primary" id="btnRegistrar">Registrar</button>
+              <div class="form-group col-sm-6 col-md-4 col-lg-2">
+                <button type="button" class="btn btn-dark" id="btnRegistrar">Registrar</button>
              </div>
               
              <!-- <div class="form-group col-sm-6 col-md-4 col-lg-1">
@@ -75,12 +72,13 @@
             </div> -->
             
             <!-- Button trigger modal -->
-            <div class="form-group col-sm-6 col-md-4 col-lg-1">
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Boton modal</button>
+            <div class="form-group col-sm-6 col-md-4 col-lg-2">
+              <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Consultar</button>
             </div>
 
-            <div class="form-group col-sm-6 col-md-4 col-lg-1">
-            <button type="button" class="btn btn-primary" id="btnGet">Traer Registro</button>
+            <div class="form-group col-sm-6 col-md-4 col-lg-2">
+            <button type="button" class="btn btn-dark" id="btnGet2">Traer Registro</button>
+            
             </div>
           </div>
  
@@ -110,11 +108,14 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <div class="form-group col-sm-12 col-md-12 col-lg-3">
+          <label for="idLibro" class="form-label">id:</label>
+          <input type="number" class="form-control" name="idLibro" id="idLibro" >
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
-        <button type="button" class="btn btn-primary">Consulta Registro</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">cerrar</button>
+        <button id="btnGet" type="button" class="btn btn-dark" data-bs-dismiss="modal">Consulta Registro</button>
       </div>
     </div>
   </div>
@@ -127,25 +128,6 @@
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script>
 
-      const toastTrigger = document.getElementById('liveToastBtn')
-    
-    const toastLiveExample = document.getElementById('liveToast')
-    
-    
-    
-    if (toastTrigger) {
-    
-    toastTrigger.addEventListener('click', () => {
-    
-      const toast = new bootstrap.Toast(toastLiveExample)
-    
-    
-    
-      toast.show()
-    
-    })
-    
-    }
     
     document.getElementById("Modal").addEventListener("click",()=>{
     
@@ -157,6 +139,8 @@
 
     
     </script>
+
+    <!-- SCRIPT DE CONSULTA -->
   <script>
     //  document.getElementById("btnGet").addEventListener("click", async () => {
     //    var datosFormulario = new FormData(document.getElementById("formulario"));
@@ -222,6 +206,24 @@
 
 
 
+
+  </script>
+
+  <!-- SCRIPT DE ALTAS -->
+  <script>
+     $('#btnRegistrar').click(function() {
+    let id = $('#idLibro').val();
+    let idNombre = $('#Nombre').val();
+    let idGenero = $('#carrera').val();
+    let idsubGenero = $('#nomEscuela').val();
+    let idAutor = $('#ciudad').val();
+    let idIdioma = $('#estado').val();
+    let idEditorial = $('#pais').val();
+    let idAño = $('#semestre').val();
+    
+
+    $.post('php/Ingresar.php',{Ic:Clave, Ti:Titul, Car:Carrer, Nom:Nomescuela, Cid:City, Est:Estado, Ps: Pais, Sem: Semestre, Grp:Grupo, Alumn:Alumno});
+  });
 
   </script>
 
