@@ -10,13 +10,13 @@
 </head>
 <body>
     <h1>Registro de Libros <img src="./image/libro.png" width="150" height="150" alt="/****\"></h1>
-    <form id="formulario">
+    <form action="alta.php" id="formulario" method="post">
 
         <div class="row"> 
-         
+          
           <div class="form-group col-sm-12 col-md-12 col-lg-6">
             <label for="idNombre" class="form-label">Titulo del Libro:</label>
-            <input type="text" class="form-control"  id="idNombre" >
+            <input type="text" class="form-control" name="idNombre" id="idNombre" >
           </div>
         <div class="form-group col-sm-12 col-md-12 col-lg-6">
           <label for="idGenero" class="form-label">Genero:</label>
@@ -64,9 +64,12 @@
             <div class="row">
               
               <div class="form-group col-sm-6 col-md-4 col-lg-2">
-                <button type="button" class="btn btn-dark" id="btnRegistrar">Registrar</button>
+                <button type="submit" class="btn btn-dark" id="btnRegistrar">Registrar</button>
              </div>
+             <div class="form-group col-sm-6 col-md-4 col-lg-2">
+              <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal1">Eliminar</button>
               
+              </div>
              <!-- <div class="form-group col-sm-6 col-md-4 col-lg-1">
              <button type="button" class="btn btn-primary" id="liveToastBtn">toast</button>
             </div> -->
@@ -76,10 +79,7 @@
               <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Consultar</button>
             </div>
 
-            <div class="form-group col-sm-6 col-md-4 col-lg-2">
-            <button type="button" class="btn btn-dark" id="btnGet2">Traer Registro</button>
             
-            </div>
           </div>
  
 
@@ -100,6 +100,8 @@
 
 
 <!-- Modal -->
+
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -124,6 +126,38 @@
       </form>
 
       
+
+         
+       
+
+      <form action="./baja.php" method="post">
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal Eliminar Registro</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <div class="form-group col-sm-12 col-md-12 col-lg-3">
+                    <label for="idLibro" class="form-label">id:</label>
+                    <input type="number" class="form-control" name="idLibro" id="idLibro" >
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">cerrar</button>
+                  <button type="submit" class="btn btn-dark">Eliminar</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </form>
+          
+
+
+      
+
+      
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script>
@@ -139,6 +173,7 @@
 
     
     </script>
+    
 
     <!-- SCRIPT DE CONSULTA -->
   <script>
@@ -204,27 +239,39 @@
             console.log(datojson);
     });
 
-
+ 
 
 
   </script>
 
   <!-- SCRIPT DE ALTAS -->
   <script>
-     $('#btnRegistrar').click(function() {
-    let id = $('#idLibro').val();
-    let idNombre = $('#Nombre').val();
-    let idGenero = $('#carrera').val();
-    let idsubGenero = $('#nomEscuela').val();
-    let idAutor = $('#ciudad').val();
-    let idIdioma = $('#estado').val();
-    let idEditorial = $('#pais').val();
-    let idAño = $('#semestre').val();
+     
+  //   $(document).ready(function () {
+
+  //     $('#btnRegistrar').click(function() {
+  //   let idL = $('#idLibro').val();
+  //   let Nombre = $('#idNombre').val();
+  //   let Genero = $('#idGenero').val();
+  //   let subGenero = $('#idsubGenero').val();
+  //   let Autor = $('#idAutor').val();
+  //   let Idioma = $('#idIdioma').val();
+  //   let Editorial = $('#idEditorial').val();
+  //   let Año = $('#idAño').val();
     
 
-    $.post('php/Ingresar.php',{Ic:Clave, Ti:Titul, Car:Carrer, Nom:Nomescuela, Cid:City, Est:Estado, Ps: Pais, Sem: Semestre, Grp:Grupo, Alumn:Alumno});
-  });
+  //  $.post('alta.php',{idLibro:idL, idNombre:Nombre, idGenero:Genero, idsubGenero:subGenero, idAutor:Autor, idIdioma:Idioma, idEditorial: idEditorial, idAño:Año });
+  //  });
+      
+  //   });
+      
 
+  
+
+  </script> 
+
+ 
+ 
   </script>
 
     
